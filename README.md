@@ -4,6 +4,41 @@ fastapi的练手项目，看到[mini-rbac](https://github.com/zy7y/mini-rbac)结
 - [x] 前端SSL证书管理查看
 - [x] 后端改用mysql
 - [x] 后端定时任务检测证书和发送邮件预警
+
+## 目录结构
+```text
+.
+├── backend  # 后端目录，fastapi
+│   ├── core
+│   ├── Dockerfile  # 后端dockerfile
+│   ├── main.py  
+│   ├── models
+│   ├── requirements.txt
+│   ├── router
+│   ├── schemas
+│   ├── service
+│   ├── static
+│   └── tests
+├── docker-compose.yml
+├── frontend  # 前端目录，VUE
+│   ├── dist  # docker启动使用的静态文件
+│   ├── Dockerfile  # 前端dockerfile
+│   ├── index.html
+│   ├── jsconfig.json
+│   ├── nginx.conf  # nginx配置文件
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── public
+│   ├── README.md
+│   ├── src
+│   └── vite.config.js
+├── imgs  # 截图
+├── LICENSE
+├── mini.sql  # 数据库初始化文件
+├── README.md
+└── reset.sh 
+
+```
 ## Docker 快速部署
 ### 1. clone 代码
 ```gitexclude
