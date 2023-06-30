@@ -5,7 +5,7 @@ from typing import Optional, Tuple
 
 
 class Settings(BaseSettings):
-    mysql_address: IPvAnyAddress
+    mysql_address: str
     mysql_port: PositiveInt = 3306
     mysql_db_name: str
     mysql_user: str
