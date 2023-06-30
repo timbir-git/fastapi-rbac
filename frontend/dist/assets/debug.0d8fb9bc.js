@@ -1,0 +1,1 @@
+import{_ as e,o as t,b as c}from"./index.851d8163.js";const n={};function r(o,s){return t(),c("div",null,"debug123123")}const _=e(n,[["render",r],["__file","D:/Code/fastapi_rbac/frontend/src/views/main/test/debug/debug.vue"]]);export{_ as default};

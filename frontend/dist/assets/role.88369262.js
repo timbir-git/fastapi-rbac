@@ -1,0 +1,1 @@
+import{bk as r}from"./index.851d8163.js";function u(e){return r({url:"/role",params:e})}function l(e){return r({url:"/role/query",method:"post",data:e})}function n(e){return r({url:`/role/${e}`,method:"delete"})}function s(e){return r({url:"/role",method:"post",data:e})}function d(e,o){return r({url:`/role/${e}`,method:"put",data:o})}export{s as a,n as d,u as g,d as p,l as q};

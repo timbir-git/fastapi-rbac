@@ -1,0 +1,1 @@
+import{_ as e,aD as r,o as a,b as t}from"./index.851d8163.js";const o={__name:"back",setup(c){return r().replace({path:"/main"}),(_,n)=>(a(),t("div"))}},u=e(o,[["__file","D:/Code/fastapi_rbac/frontend/src/views/error/back.vue"]]);export{u as default};
