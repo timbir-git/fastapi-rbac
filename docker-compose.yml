@@ -21,14 +21,14 @@ services:
     container_name: mini-rbac
     environment:
       # 更多配置，修改backend/.env
-      mysql_address: db
+      mysql_address: mini-db
       mysql_port: 3306
       mysql_db_name: mini
       mysql_user: root
       mysql_password: 123456
       TZ: Asia/Shanghai
     depends_on:
-      - db
+      - mini-db
     networks:
       - mini_network
 

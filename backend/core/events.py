@@ -3,7 +3,7 @@ from tortoise import Tortoise
 from core.settings import config
 
 
-@tenacity.retry(wait=tenacity.wait_fixed(5), stop=tenacity.stop_after_attempt(3))
+@tenacity.retry(wait=tenacity.wait_fixed(5), stop=tenacity.stop_after_attempt(6))
 async def init_orm():
     """初始化orm"""
     # await Tortoise.init(db_url="sqlite://mini.db", modules={"models": ["models"]})
