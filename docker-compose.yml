@@ -1,0 +1,52 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0
+    container_name: mini-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: mini
+      TZ: Asia/Shanghai
+    volumes:
+      - ./mini.sql:/docker-entrypoint-initdb.d/mini.sql
+    networks:
+      - mini_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mini-rbac
+    environment:
+      # 更多配置，修改backend/.env
+      mysql_address: db
+      mysql_port: 3306
+      mysql_db_name: mini
+      mysql_user: root
+      mysql_password: 123456
+      TZ: Asia/Shanghai
+    depends_on:
+      - db
+    networks:
+      - mini_network
+
+  frontend:
+    build:
+      # 上下文管理， 执行frontend 下的 Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
+    # 容器名称
+    container_name: mini-web
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "1855:80"
+    depends_on: # 依赖于backend容器，被依赖容器启动后此web容器才可启动
+      - backend
+    networks:
+      - mini_network
+
+networks:
+  mini_network:
+    driver: bridge
