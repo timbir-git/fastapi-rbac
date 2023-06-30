@@ -1,6 +1,6 @@
 version: "3"
 services:
-  db:
+  mini-db:
     image: mysql:8.0
     container_name: mini-db
     restart: always
@@ -14,6 +14,7 @@ services:
       - mini_network
 
   backend:
+    image: mini-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -32,6 +33,7 @@ services:
       - mini_network
 
   frontend:
+    image: mini-frontend:latest
     build:
       # 上下文管理， 执行frontend 下的 Dockerfile
       context: ./frontend
