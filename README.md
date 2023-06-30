@@ -65,8 +65,8 @@ mail_sender_password = xxx
 mail_receiver = ["aa@xx.net", "bb@xx.com"]  # 使用双引号，pydantic.env_settings使用json解析
 ```
 ### 3. `docker-compose up`启动项目
-访问地址：http://IP:1855
-后端地址未暴露，需要暴露，启动前修改`docker-compose.yml`添加映射
+访问地址：http://IP:1855  
+后端地址未暴露，需要暴露，启动前修改`docker-compose.yml`添加端口映射
 ```
 # docker ps
 CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS      PORTS                                   NAMES
